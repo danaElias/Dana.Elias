@@ -1,0 +1,54 @@
+body{
+    background-color:rosybrown;
+}
+#GridContainer{
+    display: grid;
+    grid-template-areas: 
+    'header header header'
+    'left main main'
+    'left main main'
+    ;
+
+}
+
+#item1 {
+    grid-area: header;
+    width: 100%;
+    background-color: #a5bb73;
+    height: 33vh;
+    font-size: 20px;
+}
+
+#item2{
+    grid-area: left;
+    width: 100%;
+    background-color: rgb(126, 156, 168);
+    height: 66vh;
+    font-size: 20px;
+}
+
+#item3{
+    grid-area: main;
+    width: 100%;
+    background-color: rgb(187, 110, 110);
+    height: 66vh; 
+    font-size: 20px;
+}
+
+/*rwd*/
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: skyblue;
+    }
+
+    #GridContainer{
+        display: grid;
+        grid-template-areas: 
+        'header '
+        'left'
+        'main'
+        ;
+    
+    }
+    
+}
