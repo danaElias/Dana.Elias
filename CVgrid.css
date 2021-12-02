@@ -17,6 +17,9 @@ body{
     background-color: #a5bb73;
     height: 33vh;
     font-size: 20px;
+    animation-name: changeFontSize;
+    animation-duration: 3s;
+    animation-iteration-count:2 ;
 }
 
 #item2{
@@ -25,6 +28,9 @@ body{
     background-color: rgb(126, 156, 168);
     height: 66vh;
     font-size: 20px;
+    animation-name: changeFontSize;
+    animation-duration: 3s;
+    animation-iteration-count:2 ;
 }
 
 #item3{
@@ -33,6 +39,9 @@ body{
     background-color: rgb(187, 110, 110);
     height: 66vh; 
     font-size: 20px;
+    animation-name: changeFontSize;
+    animation-duration: 3s;
+    animation-iteration-count:2 ;
 }
 
 /*rwd*/
@@ -51,4 +60,9 @@ body{
     
     }
     
+}
+
+@keyframes changeFontSize{
+    0% {font-size: 20px}
+    50% {font-size: 30px}
 }
