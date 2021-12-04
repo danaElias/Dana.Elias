@@ -1,0 +1,146 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.GridContainer{
+    display: grid;
+    grid-template-areas: 
+    'contact_info contact_info contact_info'
+    'Experience Experience Skills'  ;
+  }
+
+.contact_info {
+    grid-area: contact_info;
+    width: 98%;
+    background-color: rgba(236, 201, 162, 0.808);
+    padding: 20px;
+    font-size: 20px;
+       
+ }
+
+.Experience {
+    grid-area: Experience;
+    background-color: #ebdfd9a8;
+    margin: 10px;    
+    padding: 10px;
+    border:10px;
+    font-size: 20px;
+}
+
+.Skills {
+    grid-area: Skills;
+    background-color: #ebdfd9a8;;
+    margin: 10px;    
+    padding: 10px;
+    border:10px;
+    font-size: 20px;
+   
+ }
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 8px;
+  }
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-download {
+    background: rgb(231, 120, 30);
+    color: white;
+ }
+
+
+h1{
+    font-size: 40px;
+    animation: color-change 1s infinite;
+    animation-duration: 5s;
+}
+
+@keyframes color-change {
+    0% { color: hsl(0, 38%, 28%); }
+    50% { color: #267467; }
+    100% { color: #7a5858; }
+}
+
+h2{
+    font-size: 15px;
+    color: black;
+}
+
+.button{
+    font-size: 25px;
+    color: #441b03;
+    border: none;
+    background: #ebdfd9a8;
+    
+}
+
+.Detail{
+    width:100%;
+    padding: 0px;
+    font-size: 20px;
+    font-family: Tahoma;
+    color: black;
+}
+
+#contact-link{
+    text-align: right;
+    color: black; 
+}
+
+@font-face {
+    font-family: Rubik;
+    src: url(Rubik/Rubik-Italic-VariableFont_wght.ttf);
+}
+
+
+
+/*forms */
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+  
+  input[type=Email], select, textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    box-sizing: border-box;
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+ 
+  input[type=submit] {
+    background-color: #0f6066c0;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #066e5d;
+  }
+
+
