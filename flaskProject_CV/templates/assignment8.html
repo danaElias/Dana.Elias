@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment8</title>
+</head>
+<body>
+    {% if user %}
+    <h2>The content of this page relates to  {{name |upper|default('Unkown', true) }} </h2>
+    {% else %}
+    <h2>This page is not associated with anyone</h2>
+    {% endif %}
+
+    <H2>Hobbies:</H2>
+     <ul>
+            {% for hobby in hobbies %}
+                <li>{{hobby}}</li>
+            {% endfor %}
+     </ul>
+
+    {% include 'preferences.html'%}
+
+    {% extends 'volunteer.html' %}
+    {% block content1 %}
+        {{ super() }}
+        <h4>2011-2012</h4>
+    {% endblock %}
+    {% block content2 %}
+        {{ super() }}
+         <h4>"Rabin" Pre-army Preparatory Program for Training Social Leadership.</h4>
+    {% endblock %}
+</body>
+</html>
