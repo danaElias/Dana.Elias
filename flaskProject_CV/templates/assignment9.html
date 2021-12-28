@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 9</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <!--Search form-->
+    <h2> Search form</h2>
+    <form action="/assignment9" method="GET">
+        User key: <input name="userKey" type="text">
+        <input type="submit" name="search" value="Search">
+    </form>
+
+    {% if firstName %}
+        <h3>User details:</h3>
+        <h4> First name: {{ firstName }}</h4>
+        <h4> Last name: {{ last_name }}</h4>
+        <h4> Email: {{ email }}</h4>
+    {% elif inTheList %}
+        <h3> User does not exist! Please search again.</h3>
+    {% elif userList %}
+        <ol>
+            {% for x in userList %}
+             <li>
+                <h4> Full Name: {{ userList[x]['First Name'] }}  {{ userList[x]['Last name'] }} </h4>
+                <h4> Email: {{ userList[x]['Email'] }}</h4>
+             </li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    <hr>
+
+    <!--Registration form-->
+    <h2> Registration form</h2>
+    {% if session.user_name %}
+        <h3> Welcome {{ session.user_name }}!</h3>
+        <button onclick="location.href='/logout'">Log out</button>
+    {% else %}
+    <h3> Please Log in!</h3>
+    <form action="/assignment9" method="POST">
+        User name: <input name = "user_name" type="text">
+        Password: <input name="password" type="password">
+        <input type="submit" name="Login" value="Login">
+    </form>
+    {% endif %}
+
+</body>
+</html>

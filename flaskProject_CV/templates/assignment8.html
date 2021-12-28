@@ -5,6 +5,7 @@
     <title>Assignment8</title>
 </head>
 <body>
+    {% include 'header.html' %}
     {% if user %}
     <h2>The content of this page relates to  {{name |upper|default('Unkown', true) }} </h2>
     {% else %}

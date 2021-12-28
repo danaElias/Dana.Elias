@@ -109,7 +109,7 @@ h2{
 
 /*forms */
 input[type=text], select, textarea {
-    width: 100%; 
+    width: 20%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px; 
@@ -120,7 +120,7 @@ input[type=text], select, textarea {
   }
   
   input[type=Email], select, textarea {
-    width: 100%; 
+    width: 20%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px; 
@@ -128,6 +128,17 @@ input[type=text], select, textarea {
     margin-top: 6px; 
     margin-bottom: 16px; 
     resize: vertical 
+  }
+
+  input[type=password], select, textarea {
+    width: 20%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
   }
  
   input[type=submit] {
