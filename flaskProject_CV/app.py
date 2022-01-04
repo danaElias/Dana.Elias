@@ -4,6 +4,7 @@ from flask import request
 from flask import session
 
 
+
 app = Flask(__name__)
 app.secret_key = '123'
 
@@ -83,6 +84,10 @@ def assignment9():
         else:
             return render_template('assignment9.html')
 
+
+# Assignment 10
+from pages.assignment10.assignment10 import assignment10
+app.register_blueprint(assignment10)
 
 if __name__ == '__main__':
     app.run()
