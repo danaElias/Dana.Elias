@@ -2,7 +2,9 @@ from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import request
 from flask import session
-
+from flask import jsonify
+from interact_with_DB import interact_db
+import requests
 
 
 app = Flask(__name__)
@@ -88,6 +90,46 @@ def assignment9():
 # Assignment 10
 from pages.assignment10.assignment10 import assignment10
 app.register_blueprint(assignment10)
+
+
+# Assignment 11
+@app.route('/assignment11/users')
+def list_jason_format():
+    query = "select * from users"
+    query_result = interact_db(query=query, query_type='fetch')
+    response = jsonify(query_result)
+    return response
+
+    # render_template('assignment11.html')
+
+
+@app.route('/assignment11/outer_source')
+def outer_source_func():
+    return render_template('assignment11.html')
+
+
+@app.route('/req_fronted')
+def req_fronted_func():
+    id = request.args['id']
+    return render_template('assignment11.html', id=id)
+
+
+def get_user(id_user):
+    res = requests.get(f'https://reqres.in/api/users/{id_user}')
+    res = res.json()
+    print(res)
+    return res
+
+
+@app.route('/req_backend')
+def req_backend_func():
+    if "user_id" in request.args:
+        id_user = request.args['user_id']
+        user = get_user(id_user)
+        print(user)
+        return render_template('assignment11.html', user=user)
+    return render_template('assignment11.html')
+
 
 if __name__ == '__main__':
     app.run()

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 11</title>
+
+</head>
+<body>
+    {% include 'header.html' %}
+    <!--frontend-->
+    <h2> Req Frontend</h2>
+    <form action="/req_fronted" method="get">
+        User id:<input type="text" name="id">
+        <input type="submit" value="Get user">
+    </form>
+    <main>
+        <body onload="getUser({{ id }})">
+
+        </body>
+    </main>
+
+    <script src="../static/js/fetch.js"></script>
+
+    <hr>
+
+    <!--backend-->
+    <h2> Req Backend</h2>
+    <form action="/req_backend" method="get">
+        User id:<input type="text" name="user_id">
+        <input type="submit" value="Get user">
+    </form>
+
+    {% if user %}
+    <u><h3> User {{ user.data.id }}</h3></u>
+    <h4> First name: {{ user.data.first_name }} </h4>
+    <h4> Last name: {{ user.data.last_name }}</h4>
+    <img src="{{ user.data.avatar }}" alt="pic"> <br>
+    <a href="mailto:${user.data.email}">Send Email</a>
+    {% endif %}
+
+</body>
+</html>
