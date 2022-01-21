@@ -131,5 +131,26 @@ def req_backend_func():
     return render_template('assignment11.html')
 
 
+# Assignment 12
+@app.route('/assignment12/restapi_users', defaults={'user_id': 1})
+@app.route('/assignment12/restapi_users/<int:user_id>')
+def users_data_jason_format(user_id):
+    query = 'select * from users where id=%s;' % user_id
+    users = interact_db(query=query, query_type='fetch')
+    if len(users) == 0:
+        return_dict = {
+            'Status': 'failed',
+            'Massage': 'User does not exist'
+        }
+    else:
+        return_dict = {
+            'id': users[0].id,
+            'First_name': users[0].first_name,
+            'Last_name': users[0].last_name,
+            'Email': users[0].email,
+        }
+    return jsonify(return_dict)
+
+
 if __name__ == '__main__':
     app.run()
